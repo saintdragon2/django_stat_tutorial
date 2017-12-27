@@ -105,3 +105,4 @@ ENV/
 
 migrations/
 uploads/
+db.sqlite3
