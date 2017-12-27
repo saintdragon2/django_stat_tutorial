@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        {% for o in orgs %}
+            <li><a href="{{ o.get_absolute_url }}"><h1>{{ o }}</h1></a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ org.name }}</title>
+
+    <!-- Load D3.js -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Load billboard.js with style -->
+       <script src="http://naver.github.io/billboard.js/release/latest/dist/billboard.min.js"></script>
+       <link rel="stylesheet" href="https://naver.github.io/billboard.js/release/latest/dist/billboard.min.css">
+
+</head>
+<body>
+<h1>{{ org.name }}</h1>
+<h3>Researchers: {{ org.researchers }}</h3>
+<h3>FEMALE Researchers: {{ org.researchers_female }}</h3>
+<h3>MALE Researchers: {{ org.researchers_male }}</h3>
+
+<a role="button" href="../">INDEX</a>
+
+<!-- Markup -->
+<div id="BarChart"></div>
+
+</body>
+
+
+<script>
+    // Script
+    var chart = bb.generate({
+        "data": {
+            "columns": [
+                ["female researcher", {{ org.researchers_female }}],
+                ["male researcher", {{ org.researchers_male }}],
+            ],
+            "type": "bar"
+        },
+        "bar": {
+            "width": {
+                "ratio": 0.5
+            }
+        },
+        "bindto": "#BarChart"
+    });
+
+    {#setTimeout(function() {#}
+    {#    chart.load({#}
+    {#        columns: [#}
+    {#            ['data3', 130, -150, 200, 300, -200, 100]#}
+    {#        ]#}
+    {#    });#}
+    {#}, 1000);#}
+</script>
+
+</html>
